@@ -1,107 +1,116 @@
- agoritmos(ejercicios) 
-document.write("EJERCICIOS JAVASCRIPT");
+/*let numbers = [3, 2, 5, 8, 9, 10];
+let total = 0;
+for(let index = 0; index < numbers.length; index = index + 1) {
+    total = total + numbers[index];
+}
+console.log("total", total);
+*/
+function Pregunta1(){
+    console.log(parseInt(prompt("Ingrese el primero numero")) + parseInt(prompt("Ingrese el sgdo numero")));
+}
 
- //1. Implementar un algoritmo que reciba 2 argumentos y los sume, el resultado se debera imprimir en pantalla.
-
- function suma( a, b ) {
-     return a + b;
- }
-
- console.log(suma(7,8));
-
-// 2. Un estudiante realiza 4 examenes, calcular el promedio de estos.
-
- function notas(n1, n2, n3, n4) {
-     return (n1 + n2 + n3 + n4) / 4;
- }
-
- console.log(notas(17, 20,10, 12));
-
-
- //3. Calcular el area de un rectangulo
-
- function area(base, altura) {
-     return base * altura;
- }
-
- console.log(area(14, 6));
-
- //4. Calcular el area de un triángulo
-
- function areaTriangulo(base, altura) {
-     return (base * altura) / 2;
- }
-
- console.log("El area del trianngulo es: ", areaTriangulo(6,6));
-
- //5. Calcular el area de una circunferencia
-
- function areaCircunferencia(radio, pi) {
-   
-     return pi * (radio)**2
- }
-
- console.log(areaCircunferencia(5, 3.1416));
-
- //6. Determinar el sueldo semanal de un trabajador basandose en sus horas trabajadas y su salario de hora hombre
-
- let horas_trabajo = parseInt(prompt("Ingrese las horas trabajadas: "));
- let salario_hora = parseFloat(prompt("Ingrese su salario por hora: "));
-
- function salarioSemanal(horas_trabajo, salario_hora) {
-
-     salario = horas_trabajo * salario_hora;
-     return salario;
- }
-
- console.log(salarioSemanal(9, 12));
-
-/**************************************EJERCICIO 7************************************************** */
-
- //7. Una modista, para realizar sus prendas de vestir, encarga las telas al extranjero. Para cada pedido,
-//tiene que proporcionar las medidas de la tela en pulgadas, pero ella generalmente las tiene en metros. 
-//Realice un algoritmo para ayudar a resolver el problema, determinando cuántas pulgadas debe pedir con
-//base en los metros que requiere. Represéntelo mediante el diagrama de flujo y el pseudocódigo (1 pulgada = 0.0254 m).
-
- let cantidadMetros = parseFloat(prompt("Ingrese la cantidad de metros de tela: "));
- function medidas_tela_pulgadas(cantidadMetros) {    
-     cantidad = cantidadMetros * (1/0.0254);
-     return cantidad
- }
-
- console.log("La cantidad de pulgadas que debe pedir es: ", medidas_tela_pulgadas(cantidadMetros));
+function Pregunta2(){
+    let notas=0;
+    for(let i=0; i<4; i++){
+        notas+=parseInt(prompt("Ingrese una nota"));
+    }
+    console.log("El promedio de las notas es: " + notas/4);
+}
 
 
-/**************************************EJERCICIO 8 ************************************************** */
+function Pregunta3(){
+    console.log("El area del rectangulo es " + prompt("Ingrese la base del rectangulo")*(prompt("Ingrese la altura del rectangulo")));
+}
 
- //8. Una empresa importadora desea determinar cuántos dólares puede adquirir con equis cantidad de dinero peruano.
-
- let cantidad_soles = parseFloat(prompt("Ingrese la cantidad de soles: "));
- let precio_dolar_por_sol = parseFloat(prompt("Ingrese el precio del dolar por sol: "));
-
- function cantidad_dolares_adquirir(cantidad_soles, precio_dolar_por_sol) {
-     cantidad_dolares = cantidad_soles / precio_dolar_por_sol;
-     return cantidad_dolares;
- }
-
- console.log("La cantidad de dolares que puede adquirir es: ",cantidad_dolares_adquirir(cantidad_soles, precio_dolar_por_sol ));
+function Pregunta4(){
+    console.log("El area del triangulo es " + (prompt("Ingrese la base del triangulo")*prompt("Ingrese la altura del triangulo"))/2);
+}
 
 
-/**************************************EJERCICIO 9 ************************************************** */
+function Pregunta5(){
+    console.log("El area de la circunferencia es " + (prompt("Ingrese el radio de la circunferencia")**2*3.14));
+}
 
- //9. Una empresa que contrata personal requiere determinar la edad de las personas que solicitan trabajo,
- //pero cuando se les realiza la entrevista sólo se les pregunta el año en que nacieron.
+function Pregunta6(){
+    console.log("El sueldo semanal del trabajador es: " + prompt("Ingrese las horas trabajadas") * prompt("Ingrese el salario de hora hombre"));
+}
 
- let anioActual = parseInt(prompt("Ingresa el año actual: "));
- let anio_nacimiento = parseInt(prompt("Ingrese su año de nacimiento: "));
+function Pregunta7(){
+    console.log("Las pulgadas a pedir son: " + prompt("Ingrese los metros requeridos")*0.0254);
+}
 
- let edad = anioActual - anio_nacimiento;
+function Pregunta8(){
+    console.log("La cantidad de dolares que se pueden adquirir son: " + prompt("Ingrese la cantidad de soles a convertir a dolares")/3.38 +"$");
+}
 
- if (edad >= 18) {
-     console.log("Tienes: ", edad, ", obtienes el trabajo.");
- } else {
-     console.log("Tienes: ", edad, ". Eres menorde edad, no puedes trabajar.");
- }
+function Pregunta9(){
+    console.log("La edad del solicitante es: " + (2020 - prompt("Ingrese el ano de nacimiento del solicitante")));
+}
 
+function Pregunta10(){
+    let menorE=100;
+    let nombreM;
+    let nombre;
+    let edad;
+    for(let i=0; i<3; i++){
+        nombre=prompt("Ingrese el nombre de la persona: ")
+        edad=prompt("Ingrese la edad de la persona: ")
+        if(edad<menorE)
+        {
+            menorE=edad;
+            nombreM=nombre;
+        }
+    }
+    console.log(nombreM + " es el menor de los tres");
+}
 
+function Pregunta11(){
+    let antiguedad=prompt("Ingrese la antiguedad del empleado: ");
+    let bono;
+    if(antiguedad>5) bono=1000;
+    else bono=antiguedad*100;
+    console.log("Se le dara " + bono + "$ a este empleado.");
+}
 
+function Pregunta12(){
+    let salario=1500;
+    for(let i=1; i<=6; i++){
+        salario+=salario*.1;
+        console.log("El salario del ano " + i + " es: " + salario);
+    }
+}
+
+function Pregunta13(){
+    let aprobados=0;
+    let desaprobados=0;
+    let N = prompt("Ingrese el numero de calificaciones: ");
+    for(let i=0; i<N; i++){
+        if(prompt("Ingrese la calificacion: ")>=10.5) aprobados+=1;
+        else desaprobados+=1;
+    }
+    console.log("Hay " + aprobados + " alumnos aprobados y " + desaprobados + " alumnos desaprobados.");
+}
+
+function Pregunta14(){
+    let N = prompt("Ingrese el numero de focos: ");
+    let color;
+    var cantidad = [0, 0, 0];
+    for(let i=0; i<N; i++){
+        color=prompt("Ingrese el color del foco: ");
+        switch(color){
+            case "verde": 
+                cantidad[0]+=1;
+                break;
+            case "blanco": 
+                cantidad[1]+=1;
+                break;
+            default: cantidad[2]+=1;
+        }  
+    }
+    console.log("Hay " + cantidad[0] + " focos verdes, " + cantidad[1] + " focos blancos y " + cantidad[2] + " focos rojos.");	
+}
+
+function Pregunta15(){
+    if(prompt("Ingrese su edad: ")<18) console.log("No puede votar");
+    else console.log("Si puede votar");
+}
